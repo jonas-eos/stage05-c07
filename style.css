@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  /* Font Size */
+  --fs-body: 1.6rem;
+  --fs-minutes: 12.6rem;
+
+  /* Font Family */
+  --ff-body: 'Roboto';
+
+  /* Colors */
+  --hue: 240;
+  --c-texts: hsl(var(--hue), 6%, 21%);
+  --c-buttons: hsl(var(--hue), 6%, 21%);
+  --c-music-playing: hsl(var(--hue), 0%, 100%);
+
+  /* Backgrounds */
+  --bg-buttons: white;
+  --bg-music: hsl(var(--hue), 9%, 89%);
+  --bg-music-playing: hsl(194, 97%, 31%);
+}
+
+body {
+  font-size: var(--fs-body);
+
+  display: grid;
+  min-height: 100vh;;
+}
+
+main {
+  display: flex;
+  gap: 19.2rem;
+
+  justify-self: center;
+  align-self: center;
+}
+
+.display {
+  display: flex;
+  row-gap: 4.8rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timer {
+  font-size: var(--fs-minutes);
+  font-family: var(--ff-body);
+
+  color: var(--c-texts);
+
+  display: flex;
+}
+
+.controls {
+  display: flex;
+  gap: 4rem;
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+}
+
+button {
+  border: none;
+  background-color: var(--bg-buttons);
+
+  cursor: pointer;
+  transition: all .3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.sounds {
+  display: grid;
+  grid-template-areas:
+  "a b"
+  "c d";
+  gap: 3.2rem;
+}
+
+.sounds svg path:nth-child(1) {
+  fill: var(--bg-music);
+}
+
+.sounds svg path:nth-child(2) {
+  fill: var(--c-texts);
+}
+
+.sounds .playing path:nth-child(1) {
+  fill: var(--bg-music-playing);
+}
+
+.sounds .playing path:nth-child(2) {
+  fill: white;
+}
+
+@media (max-width: 1400px) {
+  main {
+    display: inline;
+  }
+
+  .display {
+    display: block;
+    margin-bottom: 10rem;
+  }
+
+  .timer {
+    display: inline;
+  }
+
+  .controls {
+    justify-content: space-between;
+  }
+}
