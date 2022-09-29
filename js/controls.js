@@ -2,11 +2,9 @@ export default function Controls({
   buttonPlay,
   buttonStop
 }) {
-  const buttonVolume = document.querySelector('input[name="forest-volume"]');
   function play() {
     buttonPlay.setAttribute('disabled', 'true');
     buttonStop.removeAttribute('disabled');
-    console.log(buttonVolume.value)
   }
 
   function pause() {
