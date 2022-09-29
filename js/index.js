@@ -8,7 +8,17 @@ import {
   buttonCoffeeShop,
   buttonFireplace,
   minutesDisplay,
-  secondsDisplay
+  secondsDisplay,
+  buttonForestVolume,
+  buttonRainVolume,
+  buttonCoffeeShopVolume,
+  buttonFireplaceVolume,
+  bodyElement,
+  svgElement,
+  timerClass,
+  buttonElement,
+  lightClass,
+  darkClass
 } from "./elements.js";
 import Controls from "./controls.js";
 import Timer from "./timer.js";
@@ -42,3 +52,28 @@ buttonCoffeeShop.addEventListener('click', () => {
 buttonFireplace.addEventListener('click', () => {
   control.music(buttonFireplace, sounds.fireplace);
 });
+
+const buttonDark = document.querySelector('.switch-mode');
+
+buttonDark.addEventListener('click', () => {
+  const elements = [bodyElement, svgElement, timerClass, buttonElement];
+  const switchButtons = [lightClass, darkClass];
+
+  control.switchMode(elements, switchButtons);
+})
+
+buttonForestVolume.addEventListener('change', () => {
+  control.changeVolume(buttonForestVolume, sounds.forest);
+})
+
+buttonRainVolume.addEventListener('change', () => {
+  control.changeVolume(buttonRainVolume, sounds.rain);
+})
+
+buttonCoffeeShopVolume.addEventListener('change', () => {
+  control.changeVolume(buttonCoffeeShopVolume, sounds.coffeeShop);
+})
+
+buttonFireplaceVolume.addEventListener('change', () => {
+  control.changeVolume(buttonFireplaceVolume, sounds.fireplace);
+})

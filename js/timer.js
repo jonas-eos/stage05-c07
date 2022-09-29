@@ -22,7 +22,7 @@ export default function Timer({
       };
 
       if (seconds < 0) {
-        seconds = 9;
+        seconds = 59;
         minutes--;
       };
 

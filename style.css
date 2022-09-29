@@ -24,6 +24,7 @@
   --bg-buttons: white;
   --bg-music: hsl(var(--hue), 9%, 89%);
   --bg-music-playing: hsl(194, 97%, 31%);
+  --bg-slider: hsl(var(--hue), 6%, 21%);
 }
 
 body {
@@ -67,8 +68,8 @@ main {
 }
 
 button {
+  background-color: transparent;
   border: none;
-  background-color: var(--bg-buttons);
 
   cursor: pointer;
   transition: all .3s;
@@ -86,11 +87,45 @@ button:hover {
   gap: 3.2rem;
 }
 
-.sounds svg path:nth-child(1) {
-  fill: var(--bg-music);
+.card {
+  background-color: var(--bg-music);
+
+  width: 13.8rem;
+  height: 15.2rem;
+  border-radius: 2.4rem;
+
+  position: relative;
+  display: block;
+  justify-content: center;
+  align-items: center;
 }
 
-.sounds svg path:nth-child(2) {
+.slider {
+  background-color: #323238;
+  width: 9rem;
+  height: 4px;
+
+  border-radius: 8px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  background-color: var(--bg-slider);
+
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+
+  cursor: ew-resize;
+  -webkit-appearance: none;
+}
+
+.sounds svg {
+  margin: 2.4rem 4.6rem 3.2rem;
+}
+
+.sounds svg path:nth-child(1) {
   fill: var(--c-texts);
 }
 
@@ -98,8 +133,59 @@ button:hover {
   fill: var(--bg-music-playing);
 }
 
-.sounds .playing path:nth-child(2) {
+.playing .card  {
+  background-color: var(--bg-music-playing);
+}
+
+.sounds .playing path:nth-child(1) {
   fill: white;
+}
+
+.playing .slider {
+  background-color: white;
+}
+
+.playing input[type='range']::-webkit-slider-thumb {
+  background-color: white;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.dark-mode .card {
+  background-color: #29292e;
+}
+
+.dark-mode .slider {
+  background-color: white;
+}
+
+.dark-mode input[type='range']::-webkit-slider-thumb {
+  background-color: white;
+}
+
+.dark-mode .playing .card {
+  background-color: #0A3442;
+}
+
+.dark-mode svg path:nth-child(1) {
+  fill: #C4C4CC;
+}
+
+.dark-mode .sounds .playing path:nth-child(1) {
+  fill: white;
+}
+
+.switch-mode {
+  position: absolute;
+  left: 90%;
+  top: 9%;
+}
+
+.hide {
+  display: none;
 }
 
 @media (max-width: 1400px) {

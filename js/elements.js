@@ -8,6 +8,17 @@ const buttonCoffeeShop = document.querySelector('.coffee-shop');
 const buttonFireplace = document.querySelector('.fireplace');
 const minutesDisplay = document.querySelector('.minutes');
 const secondsDisplay = document.querySelector('.seconds');
+const buttonForestVolume = document.querySelector('input[name="forest-volume"]');
+const buttonRainVolume = document.querySelector('input[name="rain-volume"]');
+const buttonCoffeeShopVolume = document.querySelector('input[name="coffee-shop-volume"]');
+const buttonFireplaceVolume = document.querySelector('input[name="fireplace-volume"]');
+
+const bodyElement = document.querySelector('body');
+const svgElement = document.querySelector('svg');
+const timerClass = document.querySelector('.timer');
+const buttonElement = document.querySelector('button');
+const lightClass = document.querySelector('.light');
+const darkClass = document.querySelector('.dark');
 
 export {
   buttonPlay,
@@ -19,5 +30,15 @@ export {
   buttonCoffeeShop,
   buttonFireplace,
   minutesDisplay,
-  secondsDisplay
+  secondsDisplay,
+  buttonForestVolume,
+  buttonRainVolume,
+  buttonCoffeeShopVolume,
+  buttonFireplaceVolume,
+  bodyElement,
+  svgElement,
+  timerClass,
+  buttonElement,
+  lightClass,
+  darkClass
 }
